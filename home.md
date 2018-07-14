@@ -1,6 +1,4 @@
----
-redirect_from: "/"
----
+
 
 -## Welcome to GitHub Pages
 -
