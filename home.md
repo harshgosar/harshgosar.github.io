@@ -1,5 +1,5 @@
 ---
-redirect_from: "https://harshgosar.github.io/*"
+redirect_from: "/foo/"
 ---
 
 -## Welcome to GitHub Pages
