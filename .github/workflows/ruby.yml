@@ -1,38 +1,57 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
-# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+- name: Setup Ruby Pkgs
+  # You may pin to the exact commit or the version.
+  # uses: ruby/setup-ruby-pkgs@e5897b3f277d700f7b9e24b5819112945add74ff
+  uses: ruby/setup-ruby-pkgs@v1.32.3
+  with:
+    # Used by ruby/setup-ruby.  Ruby version.
+See https://github.com/ruby/setup-ruby/blob/master/README.md and
+https://github.com/ruby/setup-ruby/blob/master/action.yml.
+A value of 'none' will bypass running ruby/setup-ruby.
 
-name: Ruby
+    ruby-version: # optional, default is default
+    # Used by ruby/setup-ruby.  The version of Bundler to install.
+See https://github.com/ruby/setup-ruby/blob/master/README.md and
+https://github.com/ruby/setup-ruby/blob/master/action.yml.
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    bundler: # optional, default is default
+    # Used by ruby/setup-ruby.  Run 'bundle install', and cache the result automatically.
+See https://github.com/ruby/setup-ruby/blob/master/README.md and
+https://github.com/ruby/setup-ruby/blob/master/action.yml.
 
-permissions:
-  contents: read
+    bundler-cache: # optional, default is false
+    # Used by ruby/setup-ruby.  Runs `gem update --system`.
+See https://github.com/ruby/setup-ruby/blob/master/README.md and
+https://github.com/ruby/setup-ruby/blob/master/action.yml.
 
-jobs:
-  test:
+    rubygems: # optional, default is default
+    # Used by ruby/setup-ruby.  The working directory to use for resolving paths for
+.ruby-version, .tool-versions and Gemfile.lock.
+See https://github.com/ruby/setup-ruby/blob/master/README.md and
+https://github.com/ruby/setup-ruby/blob/master/action.yml.
 
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby-version: ['2.6', '2.7', '3.0']
+    working-directory: # optional, default is .
+    # Used by ruby/setup-ruby.  Arbitrary string that will be added to the cache key
+of the bundler cache. Set or change it if you need to invalidate the cache.
+See https://github.com/ruby/setup-ruby/blob/master/README.md and
+https://github.com/ruby/setup-ruby/blob/master/action.yml.
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby
-    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-    # change this to (see https://github.com/ruby/setup-ruby#versioning):
-    # uses: ruby/setup-ruby@v1
-      uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
-      with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Run tests
-      run: bundle exec rake
+    cache-version: # optional, default is 0
+    # Ubuntu - install packages
+    apt-get: # optional, default is 
+    # macOS - install packages
+    brew: # optional, default is 
+    # MinGW - install MSYS2 mingw64 packages
+    mingw: # optional, default is 
+    # MinGW - install MSYS2 msys2 packages
+    msys2: # optional, default is 
+    # mswin - install MSYS2 packages (mingw64 packages need prefix)
+    mswin: # optional, default is 
+    # mswin - install Chocolatey packages
+    choco: # optional, default is 
+    # mswin - install vcpkg packages
+    vcpkg: # optional, default is 
+    # Base ruby-setup repository. It is executed before installing packages,
+and after if 'bundle install' is used.  Only used for testing updates to
+ruby/setup-ruby.  Changing this may run untrusted code.
+
+    setup-ruby-ref: # optional, default is ruby/setup-ruby/v1
