@@ -75,8 +75,8 @@ end
 get '/auth' do
     endpoint = params[:state]
     clientId = ${{secrets.CID}}
-    clientSecret = ${{'SEC'}}
-    redirectUri = ${{'URL'}} + '/auth'
+    clientSecret = ${{secrets.SEC}}
+    redirectUri = ${{secrets.URL}} + '/auth'
 
 	resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 	                    	   { 'grant_type'    => 'authorization_code',
@@ -603,8 +603,8 @@ post '/checkDeployStatus' do
 end
 
 post '/vars' do
-	return '{ "cid" : "' + ${{'CID'}} + '", "url" : "' + ${{'URL'}} + '", "gid" : "' + 
-		(${{'GID'}} ? ${{'GID'}} : '') + '" }'
+	return '{ "cid" : "' + ${{secrets.CID}} + '", "url" : "' + ${{secrets.URL}} + '", "gid" : "' + 
+		(${{secrets.GID}} ? ${{secrets.GID}} : '') + '" }'
 end
 
 helpers do
@@ -622,8 +622,8 @@ helpers do
 			resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 			                    	   { 'grant_type'    => 'refresh_token',
 			                    	     'refresh_token' => request.cookies['d3vrtk'],
-			                             'client_id'     => ${{'CID'},
-			                             'client_secret' => ${{'SEC'}} }	
+			                             'client_id'     => ${{secrets.CID'},
+			                             'client_secret' => ${{secrets.SEC}} }	
 		
                                         
 			if resp.body
