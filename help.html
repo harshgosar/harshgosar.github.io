@@ -13,12 +13,12 @@ For full license text, see the LICENSE file in the repo root or https://opensour
 
 <html>
 	<head>
-		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="shortcut icon" href="public/images/favicon.ico" />
 		<title>ASIDE.IO Help</title>
 			
-		<link href="css/help.css?v=1.0.2" rel="stylesheet" type="text/css" />
-		<script src="js/jquery/jquery.min.js?v=1.0.2"></script>
-		<script src="js/d3v/d3vHelp.js?v=1.0.2"></script>
+		<link href="public/css/help.css?v=1.0.2" rel="stylesheet" type="text/css" />
+		<script src="public/js/jquery/jquery.min.js?v=1.0.2"></script>
+		<script src="public/js/d3v/d3vHelp.js?v=1.0.2"></script>
 	</head>
 	<body>
 		<div class="main">
@@ -291,7 +291,7 @@ Logs you out of both ASIDE and Salesforce.  Shortcut: <span class="term"><span c
 			<div class="mt4 text-block">
 The <span class="important">command typeahead</span> is how you tell ASIDE what you want to do while editing code.  It sits in the top left hand corner of the code screen.   There are a handful basic command types you can issue to ASIDE that are listed below.<br /><br />
 
-				<img src="images/help_command_typeahead.png" class="help-img" />
+				<img src="public/images/help_command_typeahead.png" class="help-img" />
 			</div>
 			
 			<h3 class="mt4 title-item tl2">New</h3>
@@ -353,11 +353,11 @@ To work with an existing Apex Trigger, type its name into the <span class="impor
 			<div class="mt4 text-block">
 To create a new Lightning Resource, navigate to the code screen, click into the <span class="important">command typeahead</span>, and type <span class="term">New Lightning</span>.  From here all the new Lightning types you can create will be displayed, as shown in the screenshot below.
 <br /><br />
-<img src="images/help_lightning_new.png" class="help-img" />	
+<img src="public/images/help_lightning_new.png" class="help-img" />	
 <br /><br />
 Any time you save a new Lightning Resource you will be prompted to enter the name of the corresponding Lightning Bundle (API Name AuraDefinitionBundle, <a target="_blank" href="https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/tooling_api_objects_auradefinitionbundle.htm" class="text-link">see here</a>).  You can either enter a brand new name to create a new Lightning Bundle, or enter the name of an existing Lightning Bundle to add the new resource to that bundle. 
 <br /><br />
-<img src="images/help_lightning_save.png" class="help-img" />	
+<img src="public/images/help_lightning_save.png" class="help-img" />	
 <br /><br />
 To work with existing Lightning code, type the resource name into the <span class="important">command typeahead</span>.  If you aren’t sure of the name of the Lightning Resource you want to work with, type <span class="term">.aura</span> into the <span class="important">command typeahead</span>, as this is the prefix for all Lightning Resource extensions, so it will filter the list accordingly.
 			</div>			
@@ -406,7 +406,7 @@ Static Resources have a content type that describes the type of content stored i
 			<div class="mt4 text-block">
 To create a zipped Static Resource choose <span class="term">Zip</span> as the resource type when creating the Static Resource.   This adds a new button to the header, <span class="term">open resource</span>, which is used to add, delete, and modify files inside of the zip.  Opening an existing zipped static resource will also display the <span class="term">open resource</span> button.  
 <br /><br />
-<img src="images/help_resource_explorer.png" class="help-img" />
+<img src="public/images/help_resource_explorer.png" class="help-img" />
 <br /><br />
 To open a file or folder displayed in the <span class="term">Static Resource Explorer</span> double click on it.  If instead of working with existing files you need to create new files there are three options in the resource explorer for adding new content to the zip:
 <br /><br />
@@ -509,7 +509,7 @@ Saves the current file.  If you are in <span class="term">execute anonymous</spa
 			<h3 class="mt4 title-item tl2">Diff</h3>
 			<div class="mt4 text-block">
 Normally the diff editor will be opened for you through other functionality such as a  save conflict or viewing a debug log.  However, if you wish to toggle it yourself clicking the <span class="term">diff</span> button will open and close the diff editor, or use the shortcut: <span class="term"><span class="mod-key">command</span> + shift + c</span>.  If you want to use the diff editor as a second editor, but not have it perform a diff, it is possible to toggle the difference highlighting on and off with the shortcut, <span class="term"><span class="mod-key">command</span> + shift + a</span>.<br /><br />
-				<img src="images/help_diff.png" class="help-img" />	
+				<img src="public/images/help_diff.png" class="help-img" />	
 			</div>
 			
 			<h3 class="mt4 title-item tl2">Download</h3>
@@ -565,7 +565,7 @@ Entries in the local history table are either marked as <span class="important">
 			<div class="mt4 text-block">
 Unlike Apex or Visualforce code, Lightning comes grouped together in a bundle.  The <span class="important">Lightning</span> button simplifies managing the Lightning Bundle.  Click the <span class="important">Lightning</span> button to add files to the bundle, or jump to existing files in the bundle.  Please note that the resource types  <span class="term">Event</span>, <span class="term">Interface</span>, and <span class="term">Tokens</span> are not bundled.  Shortcut: <span class="term"><span class="mod-key">command</span> + shift + y</span>			
 <br /><br />
-<img src="images/help_lightning_button.png" class="help-img" />	
+<img src="public/images/help_lightning_button.png" class="help-img" />	
 <br /><br />
 			</div>			
 			
@@ -643,7 +643,7 @@ To execute unit tests from the <span class="term">code</span> screen, you must b
 			<div class="mt4 text-block">
 From the <span class="term">test</span> screen there are multiple ways to run unit tests.  In the top left hand corner of the screen you’ll see two buttons: <span class="term">run all</span> and <span class="term">run some</span>.  <span class="term">run all</span> does what you would expect – it runs all the unit tests in your entire organization.  Most of the time however, you’ll want to use the <span class="term">run some</span> button, to target a specific subset of tests.  
 <br /><br />
-<img src="images/help_run_some.png" class="help-img" />	
+<img src="public/images/help_run_some.png" class="help-img" />	
 <br /><br />
 There are two ways to run unit tests from the <span class="term">run some</span> popup.
 <br /><br />
@@ -704,7 +704,7 @@ However, this may not always be suitable to your needs.  Perhaps you are part of
 			<div class="mt4 text-block">
 Once a unit test has finished execution, its execution result is displayed in the results table.  Clicking one of these results rows displays more detailed information about the test result on the right half of the screen.
 <br /><br />
-<img src="images/help_test.png" class="help-img" />	
+<img src="public/images/help_test.png" class="help-img" />	
 <br /><br />
 At the top of the right half of the screen you will find a header recapping the same information found in the results table.  Additionally, it also provides a couple buttons to quickly rerun the test (<span class="term">rerun</span>), or view its source in the code editor (<span class="term">view class</span>).
 <br /><br />
@@ -720,7 +720,7 @@ To calculate your organization’s code coverage, click the <span class="term">c
 			<div class="mt4 text-block">
 Once coverage has completed calculating, the overall coverage for your organization is displayed in the top-right corner of the code coverage popup.  Next to the coverage percentage is both the number of covered lines of code, and the total lines of code in your organization.
 <br /><br />
-<img src="images/help_code_coverage.png" class="help-img" />	
+<img src="public/images/help_code_coverage.png" class="help-img" />	
 <br /><br />
 Beneath the overall coverage is a table that displays a variety of code coverage metrics, class-by-class.  Each metric is described in greater detail below.
 				<table class="shortcuts mt3">
@@ -813,11 +813,11 @@ Choosing a retrieve filter will cause all the code and metadata that match that 
 			<div class="mt4 text-block">
 If the default retrieve filters do not cover your use case, it is possible to create custom retrieve filters.  Navigate to the <span class="term">push</span> screen, and then click <span class="term">Add Filter</span> to begin creating a custom filter.
 <br /><br />
-<img class="help-img" src="images/help_manage_filters.png" />
+<img class="help-img" src="public/images/help_manage_filters.png" />
 <br /><br />
 Once you’ve clicked <span class="term">Add Filter</span>, the popup for managing filter creation and editing appears.  The first step of creating the filter is to give the filter a name; this is the name that will appear in the list of retrieve filters.  Once you've given the filter a name, click <span class="term">Add Metadata</span> to begin adding content to the retrieve filter. There are two ways to specify what content you want to retrieve.  Most salesforce retrieves are seeded by a package xml file, if you already have one you want to use saved in ASIDE, enter its name here.  If you don't have a package xml file, enter the metadata type you want to retrieve.  For example, if you wanted to retrieve Apex classes, enter <span class="term">ApexClass</span> as the metadata type.  Once you've chosen either a package.xml file or a metadata type, click <span class="term">Next</span>.
 <br /><br />
-<img class="help-img" src="images/help_retrieve_method.png" />
+<img class="help-img" src="public/images/help_retrieve_method.png" />
 <br /><br />
 After selecting a package.xml file you will be returned to the initial retrieve filter screen where you can add more metadata to the filter.  If you've selected a metadata type instead of a package.xml file, the popup above appears. This screen allows you to specify how you want to retrieve metadata for the selected type.  There are three ways to retrieve metadata.
 <br /><br />
@@ -846,7 +846,7 @@ After selecting a package.xml file you will be returned to the initial retrieve 
 <br /><br />
 After choosing the retrieval method which best suits your needs and click "next". The <span class="term">Wildcard</span> option requires no additional information and you will be returned to the initial retrieve filter screen where you can add more metadata to the filter.  If you choose the <span class="term">Written Out</span> option, then the next popup will prompt you to enter the list of metadata members you would like to retrieve.  Selecting the <span class="term">By Query</span> option displays the following screen:
 <br /><br />
-<img class="help-img" src="images/help_retrieve_query.png" />
+<img class="help-img" src="public/images/help_retrieve_query.png" />
 <br /><br />
 In order to retrieve by query there are two pieces of data you must specify.  First, you must fill out a query which specifies the scope of what you want to retrieve.  After that you must fill in the <span class="term">Member Field</span> which tells ASIDE how to turn the query results into a package.xml file.  
 <br /><br />
@@ -872,7 +872,7 @@ Using a query to retrieve might be unintuitive at first but it is a powerful fea
 <br /><br />
 Inspect the default filters for ideas on how to build your own.  For example, the <span class="term">Code Modified Since Last Retrieve</span> filter pictured below would return any files that were modified since the last time a retrieve was performed within ASIDE. This makes determining what you need to retrieve simple, as ASIDE figures it out for you.
 <br /><br />
-<img class="help-img" src="images/help_last_retrieve.png" />
+<img class="help-img" src="public/images/help_last_retrieve.png" />
 <br /><br />
 Once you have defined the query, you need fill out the <span class="term">Member field</span>.  This field tells ASIDE what sObject field(s) to use as the value in the <i>&lt;members&gt;</i> element when building out the package XML. Most of the time the appropriate value is either the <span class="term">Name</span> or <span class="term">DeveloperName</span> field, but some objects require more complex <span class="term">Member field</span>  values to successfully retrieve. For example, examine the default filter named "Objects and Layouts".  Under the <span class="important">CustomObject (Query)</span> entry, the <span class="term">Member field</span> is defined as <span class="important">DeveloperName + "__c"</span>.  This is because the value in the DeveloperName field in salesforce is not quite the correct value required for retrieves.  They need an "__c" concatenated to the end of the DeveloperName value, so the <span class="term">Member field</span> supports this type of basic concatenation between strings surrounded in double quotes as well as concatenation of sObject fields. In addition to concatenation, there is also one function available, <span class="term">TRANSLATE</span>, which can be used to turn an object id into its API name.  The <span class="important">Layout (Query)</span> uses the <span class="term">TRANSLATE</span> function to turn the <span class="term">TableOrEnumId</span> field into an API name: <span class="important">TRANSLATE(TableEnumOrId) + "-" + Name</span>
 <br /><br />
@@ -888,7 +888,7 @@ ASIDE does not have direct integration with any source control, however, retriev
 			<div class="mt4 text-block">
 Though there are multiple ways to retrieve with ASIDE, there is only one way to deploy.  Once you have obtained a retrieve result, drag it from your computer and drop it anywhere on the <span class="term">push</span> screen.  ASIDE will detect that you dropped a zip file containing a package.xml and begin a deploy for it.  The deploy status popup, pictured below, automatically appears while the deploy is in progress.
 <br /><br />
-<img src="images/help_deploy_status.png" class="help-img" />
+<img src="public/images/help_deploy_status.png" class="help-img" />
 <br /><br />
 The deploy status popup has three sections: <span class="important">console results</span>, <span class="important">deploy overview</span>, and <span class="important">test execution results</span>.  <span class="important">console results</span> displays the status of the deploy in the same manner you would see as if you had ran the same deploy from the command line using the <span class="important">ANT Migration Toolkit</span>.  The <span class="important">deploy overview</span> section is a list of all the metadata being deployed along with the status for each item. When you execute a deploy that causes unit tests to run, the <span class="important">test execution results</span> section gives detailed success and failure information about the unit tests, along with code coverage information.
 <br /><br />
@@ -914,7 +914,7 @@ To perform a destructive changes deploy, include both a destructiveChanges.xml f
 			<div class="mt4 text-block">
 The data section is a modifiable view of all the data in your org. It allows you to query any data accessible to the Partner and Tooling APIs, and in many cases, edit the resulting data.
 <br /><br />
-<img src="images/help_data.png" class="help-img" />
+<img src="public/images/help_data.png" class="help-img" />
 <br /><br />
 To perform queries, navigate to the <span class="term">data</span> screen and click into the query input (the text box that says “enter a query”).  From here you can enter a SOQL query against any sObject visible to the Partner API or the Tooling API.  After you have entered a query into the input, click the <span class="term">query</span> button to execute the query, or use the shortcut <span class="term"><span class="mod-key">command</span> + s</span>.  Query results appear in the table beneath the query input.			
 			</div>
@@ -960,7 +960,7 @@ The query results table also supports pagination.  Click on the light bulb icon 
 			<div class="mt4 text-block">
 Another useful feature of the query results table is the ability to filter on query results.  To filter your query results, click the magnifying glass in the query results table footer.  This will display an additional row at the top of the table that contains one input for each column.  Entering a value into the column will filter the table rows, matching against that column’s values. 
 <br /><br />
-<img src="images/help_column_filtering.png" class="help-img" />		
+<img src="public/images/help_column_filtering.png" class="help-img" />		
 			</div>
 
 			<h3 class="mt4 title-item tl2">Query Result Rows</h3>
