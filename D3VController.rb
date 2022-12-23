@@ -1727,8 +1727,8 @@ class D3VController
 				aside['org']      = info
 				aside['user']     = user
 				aside['objMap']   = objMap
-				aside['url']      = ENV['URL']
-				aside['gid']      = ENV['GID'] ? ENV['GID'] : ''
+				aside['url']      = ${{'URL'}
+				aside['gid']      = ${{'GID'} ? ${{'GID'} : ''
 				info['namespace'] = determineNamespace(endpoint, namespace, hasNamespaceCookie)
 				
 				return aside.to_json
