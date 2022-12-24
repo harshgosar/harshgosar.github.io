@@ -603,7 +603,7 @@ post '/checkDeployStatus' do
 end
 
 post '/vars' do
-	return '{ "cid" : "' + ENV['GITHUB_PAGES'] + '", "url" : "' + ENV['URL'] + '", "gid" : "' + 
+	return '{ "cid" : "' + ENV['CID'] + '", "url" : "' + ENV['URL'] + '", "gid" : "' + 
 		(ENV['GID'] ? ENV['GID'] : '') + '" }'
 end
 
