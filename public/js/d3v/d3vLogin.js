@@ -125,7 +125,7 @@
 			D3V_CID = result.cid;
 			D3V_GID = result.gid;
 			
-			setupGoogleAnalytics();
+			//setupGoogleAnalytics();
 		});
 	}
 	
