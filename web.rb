@@ -80,7 +80,7 @@ get '/auth' do
 
 	resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 	                    	   { 'grant_type'    => 'authorization_code',
-	                             'client_id'     => clientId,
+	                             'client_id'     => 'test',
 	                             'client_secret' => clientSecret,
 	                             'redirect_uri'  => redirectUri,
 	                             'code'          => params[:code] }	
