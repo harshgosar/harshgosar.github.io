@@ -69,3 +69,5 @@ jobs:
         uses: actions/deploy-pages@v1
         env:
           CID: ${{ secrets.CID }}
+        with: # Set the secret as an input
+          CID: ${{ secrets.CID }}
