@@ -74,13 +74,13 @@ end
 #oauth based login endpoint
 get '/auth' do
     endpoint = params[:state]
-    clientId = ENV['CID']
+    clientId = ENV['GITHUB_PAGES']
     clientSecret = ENV['SEC']
     redirectUri = ENV['URL'] + '/auth'
 
 	resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 	                    	   { 'grant_type'    => 'authorization_code',
-	                             'client_id'     => 'test',
+	                             'client_id'     => clientId,
 	                             'client_secret' => clientSecret,
 	                             'redirect_uri'  => redirectUri,
 	                             'code'          => params[:code] }	
@@ -603,7 +603,7 @@ post '/checkDeployStatus' do
 end
 
 post '/vars' do
-	return '{ "cid" : "' + 'test' + '", "url" : "' + ENV['URL'] + '", "gid" : "' + 
+	return '{ "cid" : "' + ENV['GITHUB_PAGES'] + '", "url" : "' + ENV['URL'] + '", "gid" : "' + 
 		(ENV['GID'] ? ENV['GID'] : '') + '" }'
 end
 

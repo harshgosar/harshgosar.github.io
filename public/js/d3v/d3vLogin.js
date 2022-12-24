@@ -25,7 +25,7 @@
 		
 		window.open(
 			'https://' + orgType + '.salesforce.com/services/oauth2/authorize' +
-			'?response_type=tetcode' +
+			'?response_type=code' +
 			'&client_id=' + D3V_CID + 
 			'&redirect_uri=' + encodeURIComponent(D3V_URL + '/auth') + 
 			'&state=' + orgType, '_self');
