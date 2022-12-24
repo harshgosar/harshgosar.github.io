@@ -6,9 +6,6 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll site to Pages
 
-env:
-  CID: ${{ secrets.CID }}
-
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -62,14 +59,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }} 
     runs-on: ubuntu-latest
-    needs: build
-    env:
-        CID: ${{ secrets.CID }}
+    needs: build    
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
         env:
-          CID: ${{ secrets.CID }}
-        with: # Set the secret as an input
-          CID: ${{ secrets.CID }}
+          CID: ${{ secrets.CID }}        
