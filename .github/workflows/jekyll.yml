@@ -28,9 +28,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-env:
-  CID: ${{ secrets.CID }}
-
 jobs:
   # Build job
   build:
