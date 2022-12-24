@@ -6,6 +6,9 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll site to Pages
 
+env:
+  CID: ${{ secrets.CID }}
+
 on:
   # Runs on pushes targeting the default branch
   push:
@@ -53,6 +56,8 @@ jobs:
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v1
+        env:
+          CID: ${{ secrets.CID }}
 
   # Deployment job
   deploy:
