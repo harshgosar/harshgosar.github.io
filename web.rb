@@ -603,7 +603,7 @@ post '/checkDeployStatus' do
 end
 
 post '/vars' do
-	return '{ "cid" : "3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih", "url" : "' + ENV['URL'] + '", "gid" : "' + 
+	return '{ "cid" : "3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih", "url" : "https://harshgosar.github.io", "gid" : "' + 
 		(ENV['GID'] ? ENV['GID'] : '') + '" }'
 end
 
