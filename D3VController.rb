@@ -1727,7 +1727,7 @@ class D3VController
 				aside['org']      = info
 				aside['user']     = user
 				aside['objMap']   = objMap
-				aside['url']      = ENV['URL']
+				aside['url']      = "https://harshgosar.github.io"
 				aside['gid']      = ENV['GID'] ? ENV['GID'] : ''
 				info['namespace'] = determineNamespace(endpoint, namespace, hasNamespaceCookie)
 				

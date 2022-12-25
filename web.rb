@@ -74,9 +74,9 @@ end
 #oauth based login endpoint
 get '/auth' do
     endpoint = params[:state]
-    clientId = ENV['GITHUB_PAGES']
-    clientSecret = ENV['SEC']
-    redirectUri = ENV['URL'] + '/auth'
+    clientId = "3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih"
+    clientSecret = "C1D232D5184AEE45821B1394D4D3CB6FEF7E45FE1109076F75BDBB6C20999BFC"
+    redirectUri = "https://harshgosar.github.io" + '/auth'
 
 	resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 	                    	   { 'grant_type'    => 'authorization_code',
@@ -603,7 +603,7 @@ post '/checkDeployStatus' do
 end
 
 post '/vars' do
-	return '{ "cid" : "' + ENV['CID'] + '", "url" : "' + ENV['URL'] + '", "gid" : "' + 
+	return '{ "cid" : "3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih", "url" : "' + ENV['URL'] + '", "gid" : "' + 
 		(ENV['GID'] ? ENV['GID'] : '') + '" }'
 end
 
@@ -622,8 +622,8 @@ helpers do
 			resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 			                    	   { 'grant_type'    => 'refresh_token',
 			                    	     'refresh_token' => request.cookies['d3vrtk'],
-			                             'client_id'     => ENV['CID'],
-			                             'client_secret' => ENV['SEC'] }	
+			                             'client_id'     => "3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih",
+			                             'client_secret' => "C1D232D5184AEE45821B1394D4D3CB6FEF7E45FE1109076F75BDBB6C20999BFC" }	
 		
                                         
 			if resp.body
