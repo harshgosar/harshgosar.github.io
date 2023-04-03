@@ -59,7 +59,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: my-aside
+          name: github-pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1       
