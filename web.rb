@@ -73,10 +73,15 @@ end
 
 #oauth based login endpoint
 get '/auth' do
+    puts "auth"
+    puts ENV['CID']
+    puts ENV['SEC']
+    puts ENV['URL']
+    puts params[:state]
     endpoint = params[:state]
-    clientId = "3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih"
-    clientSecret = "C1D232D5184AEE45821B1394D4D3CB6FEF7E45FE1109076F75BDBB6C20999BFC"
-    redirectUri = "https://harshgosar.github.io" + '/auth'
+    clientId = ENV['CID']
+    clientSecret = ENV['SEC']
+    redirectUri = ENV['URL'] + '/auth'
 
 	resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 	                    	   { 'grant_type'    => 'authorization_code',
@@ -84,9 +89,11 @@ get '/auth' do
 	                             'client_secret' => clientSecret,
 	                             'redirect_uri'  => redirectUri,
 	                             'code'          => params[:code] }	
-	                             	
+	      
+    puts resp.body
 	if resp.body
-		content = JSON.parse(resp.body)        
+		content = JSON.parse(resp.body)    
+        puts content    
 		twentyFourHoursFromNow = Time.new + 86400
 		eightFromNow = Time.new + 28800
 		
@@ -112,20 +119,22 @@ get '/auth' do
 			response.set_cookie('d3vuid', :value => $2, :expires => eightFromNow)	
 			response.set_cookie('d3vrtk', :value => content['refresh_token'], :expires => twentyFourHoursFromNow)
 			response.set_cookie('d3vend', :value => endpoint,  :expires => twentyFourHoursFromNow)
-			
+			puts request.cookies
 			if request.cookies['d3vpbq']
 				redirect '/?query=' + CGI::escape(request.cookies['d3vpbq'])
 			end
 				
 			redirect '/'
 		elsif content['error']
+            puts content['error']
+            puts content['error_description']
 			ctrl = D3VController.new
 			ctrl.logAuthFault(request.ip, '', content['error'], content['error_description'])
 			response.set_cookie('d3vlf1', :value => content['error'], :expires => eightFromNow)
 			response.set_cookie('d3vlf2', :value => content['error_description'], :expires => eightFromNow)
 		end
 	end
-		
+    puts "End"
 	redirect '/login'                 
 end
 
@@ -603,7 +612,7 @@ post '/checkDeployStatus' do
 end
 
 post '/vars' do
-	return '{ "cid" : "3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih", "url" : "https://harshgosar.github.io", "gid" : "' + 
+	return '{ "cid" : "' + ENV['CID'] + '", "url" : "' + ENV['URL'] + '", "gid" : "' + 
 		(ENV['GID'] ? ENV['GID'] : '') + '" }'
 end
 
@@ -622,8 +631,8 @@ helpers do
 			resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 			                    	   { 'grant_type'    => 'refresh_token',
 			                    	     'refresh_token' => request.cookies['d3vrtk'],
-			                             'client_id'     => "3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih",
-			                             'client_secret' => "C1D232D5184AEE45821B1394D4D3CB6FEF7E45FE1109076F75BDBB6C20999BFC" }	
+			                             'client_id'     => ENV['CID'],
+			                             'client_secret' => ENV['SEC'] }	
 		
                                         
 			if resp.body

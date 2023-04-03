@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "3.1.0"
+ruby "3.1.3"
 
 gem 'sinatra'
 gem 'eventmachine'
@@ -11,10 +11,6 @@ gem 'facets'
 gem 'hpricot'
 gem 'json'
 gem 'savon'
-gem 'pg'
 gem 'rack-ssl-enforcer'
 gem 'rack-timeout'
 gem 'httpclient'
-gem 'jekyll'
-gem 'jekyll-theme-minimal'
-gem 'dotenv'
