@@ -16,7 +16,7 @@ require './salesforce_meta.rb'
 require './defaultDriver.rb'
 require './client_auth_header_handler.rb'
 require 'json'
-require 'pg'
+#require 'pg'
 
 class D3VController
 	
@@ -1727,7 +1727,7 @@ class D3VController
 				aside['org']      = info
 				aside['user']     = user
 				aside['objMap']   = objMap
-				aside['url']      = "https://harshgosar.github.io"
+				aside['url']      = ENV['URL']
 				aside['gid']      = ENV['GID'] ? ENV['GID'] : ''
 				info['namespace'] = determineNamespace(endpoint, namespace, hasNamespaceCookie)
 				
