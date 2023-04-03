@@ -75,6 +75,7 @@ DEPENDENCIES
   thin
   rexml
   jekyll
+  jekyll-theme-minimal 
 
 RUBY VERSION
    ruby 3.1.3
