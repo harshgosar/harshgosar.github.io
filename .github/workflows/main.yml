@@ -40,12 +40,12 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - run: bundle config --local deployment false
       - name: Install dependencies
-        run: bundle install           
+        run: bundle install
+      - name: Create folder
+        run: mkdir -p ./_site           
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v1        
-        with:
-          path: '/'
+        uses: actions/upload-pages-artifact@v1
 
   # Deployment job
   deploy:
