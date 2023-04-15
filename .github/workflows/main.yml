@@ -30,7 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List of the GitHub Actions environment variables on Windows
-        run: env
+        run: |
+          echo ${{env.URL}}
   # Build job
   build:
     runs-on: ubuntu-latest
