@@ -79,9 +79,9 @@ get '/auth' do
     puts ENV['URL']
     puts params[:state]
     endpoint = params[:state]
-    clientId = '3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih'
-    clientSecret = 'C1D232D5184AEE45821B1394D4D3CB6FEF7E45FE1109076F75BDBB6C20999BFC'
-    redirectUri = 'https://harshgosar.github.io/auth'
+    clientId = ENV['CID']
+    clientSecret = ENV['SEC']
+    redirectUri = ENV['URL'] + '/auth'
 
 	resp = HTTPClient.new.post 'https://' + endpoint + '.salesforce.com/services/oauth2/token', 
 	                    	   { 'grant_type'    => 'authorization_code',
@@ -612,7 +612,7 @@ post '/checkDeployStatus' do
 end
 
 post '/vars' do
-	return '{ "cid" : "' + 'test' + '", "url" : "' + 'test' + '", "gid" : "' + 
+	return '{ "cid" : "' + ENV['CID'] + '", "url" : "' + ENV['URL'] + '", "gid" : "' + 
 		(ENV['GID'] ? ENV['GID'] : '') + '" }'
 end
 
