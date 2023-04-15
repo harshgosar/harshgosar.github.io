@@ -27,7 +27,7 @@
 			'https://' + orgType + '.salesforce.com/services/oauth2/authorize' +
 			'?response_type=code' +
 			'&client_id=test'+ 
-			'&redirect_uri=' + encodeURIComponent(D3V_URL + '/auth') + 
+			'&redirect_uri=' + encodeURIComponent('test/auth') + 
 			'&state=' + orgType, '_self');
 	}
 
