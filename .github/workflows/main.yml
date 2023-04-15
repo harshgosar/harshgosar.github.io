@@ -25,12 +25,13 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env: 
+  URL: ${{ vars.URL }}
+
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env: 
-      URL: ${{ vars.URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3     
@@ -61,8 +62,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}    
     runs-on: ubuntu-latest
-    env: 
-      URL: ${{ vars.URL }}
     needs: build    
     steps:
       - name: Deploy to GitHub Pages
