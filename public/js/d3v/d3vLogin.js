@@ -27,7 +27,7 @@
 			'https://' + orgType + '.salesforce.com/services/oauth2/authorize' +
 			'?response_type=code' +
 			'&client_id=3MVG9ZL0ppGP5UrDsK0t2CUN4dqyEQ1eo9Jwrc.MaaHiSUjmygHjB6NyWJydsVcKp9I3wd9GITMQ48mckfVih'+ 
-			'&redirect_uri=' + encodeURIComponent('https://harshgosar.github.io/auths') + 
+			'&redirect_uri=' + encodeURIComponent('https://harshgosar.github.io/auth') + 
 			'&state=' + orgType, '_self');
 	}
 
