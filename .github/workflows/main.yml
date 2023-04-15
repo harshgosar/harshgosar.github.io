@@ -44,9 +44,7 @@ jobs:
         with:
           ruby-version: '3.1.3' # Not needed with a .ruby-version file
           bundler-cache: false # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
-          env:
-            URL: 'test'
+          cache-version: 0 # Increment this number if you need to re-download cached gems          
       - run: bundle config --local deployment false
       - name: Install dependencies
         run: bundle install
