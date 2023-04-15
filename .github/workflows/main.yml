@@ -25,13 +25,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-jobs:
-  github-actions-environment-variables-ubuntu:
-    runs-on: ubuntu-latest
-    steps:
-      - name: List of the GitHub Actions environment variables on Windows
-        run: |
-          echo ${{ vars.URL }}
   # Build job
   build:
     runs-on: ubuntu-latest
@@ -47,6 +40,8 @@ jobs:
       - run: bundle config --local deployment false
       - name: Install dependencies
         run: bundle install
+        env: 
+          URL: ${{ vars.URL }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
