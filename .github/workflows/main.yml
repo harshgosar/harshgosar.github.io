@@ -25,9 +25,12 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env: 
+      URL: ${{ vars.URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3     
@@ -40,8 +43,6 @@ concurrency:
       - run: bundle config --local deployment false
       - name: Install dependencies
         run: bundle install
-        env: 
-          URL: ${{ vars.URL }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
