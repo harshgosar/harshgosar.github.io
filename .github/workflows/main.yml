@@ -41,7 +41,6 @@ jobs:
       - run: bundle config --local deployment false
       - name: Install dependencies
         run: bundle install
-        run: env
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
