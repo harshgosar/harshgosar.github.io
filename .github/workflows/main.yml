@@ -31,6 +31,8 @@ env:
 jobs:
   # Build job
   build:
+    env: 
+      URL: '$URL'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
